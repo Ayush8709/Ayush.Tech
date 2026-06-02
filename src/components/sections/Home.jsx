@@ -68,9 +68,8 @@ export const Home = () => {
             </div>
 
             <p className="text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed max-w-lg">
-              I am a passionate software engineer specializing in modern web ecosystems. 
-              My goal is to craft high-performance, scalable applications with robust backend 
-              architectures and elegant, user-centric interfaces.
+              With <strong>1+ year of professional experience</strong>, I am a passionate software engineer specializing in modern web ecosystems. 
+              I focus on building high-performance, scalable web systems with clean code and great user experiences.
             </p>
 
             {/* CTA Buttons */}

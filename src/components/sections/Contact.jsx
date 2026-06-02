@@ -190,7 +190,7 @@ export const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full bg-[var(--input-bg)] border border-[var(--border-color)] rounded-xl px-4 py-3 text-[var(--text-primary)] transition duration-300 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                      placeholder="e.g. Jane Doe"
+                      placeholder="e.g. Rahul Sharma"
                     />
                   </div>
 
@@ -207,7 +207,7 @@ export const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full bg-[var(--input-bg)] border border-[var(--border-color)] rounded-xl px-4 py-3 text-[var(--text-primary)] transition duration-300 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-                      placeholder="example@gmail.com"
+                      placeholder="rahul.sharma@gmail.com"
                     />
                   </div>
 

@@ -4,41 +4,19 @@ export const About = () => {
   const skillCategories = [
     {
       title: "💻 Frontend",
-      skills: [
-        { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "TypeScript", level: 80 },
-        { name: "TailwindCSS", level: 95 },
-        { name: "Bootstrap", level: 85 },
-      ],
+      skills: ["React", "Next.js", "TypeScript", "TailwindCSS", "Bootstrap"],
     },
     {
       title: "⚙️ Backend",
-      skills: [
-        { name: "Node.js & Express.js", level: 88 },
-        { name: "Spring Boot", level: 75 },
-        { name: "REST APIs", level: 90 },
-        { name: "Microservices", level: 80 },
-        { name: "Docker", level: 70 },
-      ],
+      skills: ["Node.js & Express.js", "REST APIs", "Microservices", "RabbitMQ", "Docker"],
     },
     {
       title: "🗄️ Databases & Caching",
-      skills: [
-        { name: "SQL", level: 85 },
-        { name: "NoSQL (MongoDB)", level: 88 },
-        { name: "Redis", level: 75 },
-      ],
+      skills: ["SQL", "NoSQL (MongoDB)", "Redis"],
     },
     {
       title: "🔧 Languages & Core",
-      skills: [
-        { name: "Java", level: 85 },
-        { name: "JavaScript", level: 90 },
-        { name: "Python", level: 75 },
-        { name: "DSA / OOPs", level: 80 },
-        { name: "Git & GitHub", level: 90 },
-      ],
+      skills: ["Java", "JavaScript", "Python", "DSA / OOPs", "Git & GitHub", "GitHub Actions"],
     },
   ];
 
@@ -59,14 +37,25 @@ export const About = () => {
 
   const experience = [
     {
-      role: "Project Intern",
-      company: "Shashi Infotech Pvt. Ltd.",
-      period: "Mar 2025 – May 2025",
+      role: "Full Stack Developer",
+      company: "Enegix PVT LTD Ranchi",
+      period: "7+ Months (Current)",
       bullets: [
-        "Engineered full-stack placement portal using Next.js, role-based dashboards, and secure Firestore integration.",
-        "Built AI-powered interview module that generates technical MCQ diagnostics and delivers dynamic preparative feedback.",
-        "Automated job dispatch, scheduling, and feedback reporting, slashing manual coordination tasks by 70%.",
-        "Achieved 95%+ performance audits on Lighthouse using responsive techniques in Tailwind CSS.",
+        "Currently working on creating fast, reliable web systems.",
+        "Collaborate directly with multiple clients on their custom projects and business needs.",
+        "Design frontend interfaces, write backend APIs, and manage databases.",
+        "Ensure high-quality features, clean code, and fast page speeds.",
+      ],
+    },
+    {
+      role: "Web Developer Intern",
+      company: "Shashi Infotech Pvt. Ltd.",
+      period: "6 Months Internship",
+      bullets: [
+        "Learned how to work on industry-ready, professional web projects.",
+        "Contributed by working on small modules and parts of the application.",
+        "Gained hands-on experience in team collaboration and developer workflows.",
+        "Explored and experimented with new web technologies to build features.",
       ],
     },
   ];
@@ -106,26 +95,19 @@ export const About = () => {
             {skillCategories.map((category, idx) => (
               <div
                 key={idx}
-                className="glass-panel p-6 rounded-2xl flex flex-col space-y-5"
+                className="glass-panel p-6 rounded-2xl flex flex-col space-y-4 hover:-translate-y-1 transition-all"
               >
-                <h4 className="text-lg font-bold text-[var(--text-primary)] tracking-wide">
+                <h4 className="text-lg font-bold text-[var(--text-primary)] border-b border-[var(--border-color)] pb-2.5">
                   {category.title}
                 </h4>
-                <div className="space-y-4">
+                <div className="flex flex-wrap gap-2.5 pt-2">
                   {category.skills.map((skill, sIdx) => (
-                    <div key={sIdx} className="space-y-1.5">
-                      <div className="flex justify-between items-center text-sm font-medium">
-                        <span className="text-[var(--text-primary)]">{skill.name}</span>
-                        <span className="text-blue-500 dark:text-blue-400">{skill.level}%</span>
-                      </div>
-                      {/* Premium animated progress bar */}
-                      <div className="w-full h-2 bg-blue-500/10 rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full transition-all duration-1000 ease-out"
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
-                    </div>
+                    <span
+                      key={sIdx}
+                      className="bg-blue-500/10 text-blue-400 py-1.5 px-3 rounded-xl text-sm font-medium border border-blue-500/15 hover:bg-blue-500/20 hover:border-blue-500/30 hover:shadow-[0_2px_10px_rgba(59,130,246,0.25)] transition-all cursor-default"
+                    >
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -141,23 +123,34 @@ export const About = () => {
                 💼 Experience
               </h3>
               
-              <div className="relative pl-6 border-l-2 border-[var(--timeline-line)] space-y-12">
+              <div className="relative pl-8 border-l border-[var(--timeline-line)] space-y-12">
                 {experience.map((exp, idx) => (
                   <div key={idx} className="relative">
-                    {/* Glowing Timeline Marker */}
-                    <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-blue-500 border-4 border-[var(--bg-primary)] shadow-[0_0_12px_rgba(59,130,246,0.8)] animate-pulse" />
+                    {/* Glowing Briefcase Timeline Badge */}
+                    <div className="absolute -left-[45px] top-1.5 w-8 h-8 rounded-xl bg-blue-600 border border-blue-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-transform duration-300 hover:scale-110">
+                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1.5 8.077c-.503.208-1.043.323-1.609.341A24.122 24.122 0 0110 15c.69 0 1.369-.03 2.029-.088a5.19 5.19 0 00-1.609-.341L10 14.5l-.5-.423z" clipRule="evenodd" />
+                      </svg>
+                    </div>
                     
-                    <div className="glass-panel p-6 rounded-2xl flex flex-col space-y-3">
-                      <span className="inline-block px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded-full w-fit">
-                        {exp.period}
-                      </span>
-                      <h4 className="text-lg font-bold text-[var(--text-primary)]">
-                        {exp.role} <span className="text-blue-500 font-normal">@ {exp.company}</span>
-                      </h4>
-                      <ul className="space-y-2 text-sm text-[var(--text-secondary)] list-disc list-inside">
+                    <div className="glass-panel p-6 rounded-2xl flex flex-col space-y-3.5 hover:-translate-y-1.5 duration-300">
+                      <div className="flex flex-wrap justify-between items-start gap-2 border-b border-[var(--border-color)] pb-3">
+                        <div>
+                          <h4 className="text-lg font-bold text-[var(--text-primary)]">
+                            {exp.role}
+                          </h4>
+                          <p className="text-blue-500 text-sm font-medium">{exp.company}</p>
+                        </div>
+                        <span className="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded-full border border-blue-500/20 shadow-sm">
+                          {exp.period}
+                        </span>
+                      </div>
+                      
+                      <ul className="space-y-2.5 text-sm text-[var(--text-secondary)]">
                         {exp.bullets.map((bullet, bIdx) => (
-                          <li key={bIdx} className="leading-relaxed pl-1">
-                            {bullet}
+                          <li key={bIdx} className="flex items-start leading-relaxed">
+                            <span className="text-blue-500 mr-2.5 mt-1 text-xs">✦</span>
+                            <span>{bullet}</span>
                           </li>
                         ))}
                       </ul>
@@ -173,20 +166,29 @@ export const About = () => {
                 🎓 Education & Milestones
               </h3>
               
-              <div className="relative pl-6 border-l-2 border-[var(--timeline-line)] space-y-12">
+              <div className="relative pl-8 border-l border-[var(--timeline-line)] space-y-12">
                 {education.map((edu, idx) => (
                   <div key={idx} className="relative">
-                    {/* Glowing Timeline Marker */}
-                    <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 border-4 border-[var(--bg-primary)] shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
+                    {/* Glowing Graduation Cap Timeline Badge */}
+                    <div className="absolute -left-[45px] top-1.5 w-8 h-8 rounded-xl bg-cyan-600 border border-cyan-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(8,145,178,0.4)] transition-transform duration-300 hover:scale-110">
+                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 8.673v1.877c0 1.218.736 2.308 1.862 2.758a7.03 7.03 0 005.276 0c1.126-.45 1.862-1.54 1.862-2.758V8.673l1.69.724a1 1 0 01.597.918v4.186a1 1 0 01-.124.482L14 18.2V15a1 1 0 10-2 0v3.8l-1.61-.403A1 1 0 0110 17.436V12.93a1 1 0 00-.394-.788l-6.3-4.7a1 1 0 01.597-.918z" />
+                      </svg>
+                    </div>
                     
-                    <div className="glass-panel p-6 rounded-2xl flex flex-col space-y-3">
-                      <span className="inline-block px-3 py-1 bg-cyan-400/10 text-cyan-400 text-xs font-semibold rounded-full w-fit">
-                        {edu.period}
-                      </span>
-                      <h4 className="text-lg font-bold text-[var(--text-primary)]">
-                        {edu.degree}
-                      </h4>
-                      <p className="text-blue-500 text-sm font-medium">{edu.institution}</p>
+                    <div className="glass-panel p-6 rounded-2xl flex flex-col space-y-3.5 hover:-translate-y-1.5 duration-300">
+                      <div className="flex flex-wrap justify-between items-start gap-2 border-b border-[var(--border-color)] pb-3">
+                        <div>
+                          <h4 className="text-lg font-bold text-[var(--text-primary)]">
+                            {edu.degree}
+                          </h4>
+                          <p className="text-cyan-500 text-sm font-medium">{edu.institution}</p>
+                        </div>
+                        <span className="px-3 py-1 bg-cyan-400/10 text-cyan-400 text-xs font-semibold rounded-full border border-cyan-400/20 shadow-sm">
+                          {edu.period}
+                        </span>
+                      </div>
+                      
                       <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
                         {edu.description}
                       </p>
