@@ -39,7 +39,7 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen w-full flex items-center justify-center relative overflow-hidden py-16 px-6 max-w-6xl mx-auto"
+      className="min-h-screen w-full flex items-center justify-center relative overflow-hidden pt-28 pb-16 md:py-16 px-6 max-w-6xl mx-auto"
     >
       <RevealOnScroll>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center w-full">
