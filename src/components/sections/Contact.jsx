@@ -152,16 +152,16 @@ export const Contact = () => {
               </div>
 
               {/* Social Channels */}
-              <div className="pt-6 space-y-3">
+              <div className="pt-6 space-y-3 w-full">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">Digital Channels</h4>
-                <div className="flex space-x-3">
+                <div className="grid grid-cols-4 gap-3 w-full max-w-xs sm:max-w-sm">
                   {socials.map((social, idx) => (
                     <a
                       key={idx}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-3 rounded-xl border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--text-primary)] transition-all duration-300 ${social.color}`}
+                      className={`p-3 rounded-xl border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--text-primary)] transition-all duration-300 flex items-center justify-center ${social.color}`}
                       title={social.name}
                     >
                       {social.svg}
