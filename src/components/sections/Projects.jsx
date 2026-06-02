@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { RevealOnScroll } from "../RevealOnScroll";
 
 export const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -251,7 +250,7 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen flex items-center justify-center py-24 w-full relative"
+      className="min-h-screen flex items-start md:items-center justify-center py-28 md:py-24 w-full relative"
     >
       <div className="max-w-6xl mx-auto px-6 w-full">
         {/* Section Heading */}
@@ -266,12 +265,12 @@ export const Projects = () => {
         </div>
 
         {/* Filter Navigation Tabs */}
-        <div className="flex justify-center space-x-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-12 max-w-full px-2">
           {filterTabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveFilter(tab)}
-              className={`px-4.5 py-1.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
+              className={`px-2.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 cursor-pointer ${
                 activeFilter === tab
                   ? "bg-blue-600 text-white shadow-md shadow-blue-500/25 border-transparent"
                   : "border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-blue-500/30"

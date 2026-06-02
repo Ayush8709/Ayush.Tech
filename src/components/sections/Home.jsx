@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { RevealOnScroll } from "../RevealOnScroll";
 
 export const Home = () => {
   const roles = [
@@ -39,10 +38,9 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen w-full flex items-center justify-center relative overflow-hidden pt-28 pb-16 md:py-16 px-6 max-w-6xl mx-auto"
+      className="min-h-screen w-full flex items-start md:items-center justify-center relative overflow-hidden pt-36 pb-16 md:py-16 px-6 max-w-6xl mx-auto"
     >
-      <RevealOnScroll>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center w-full">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center w-full">
           {/* Left Text Column */}
           <div className="md:col-span-7 flex flex-col text-left space-y-6 z-10 Order-2 md:order-1">
             <div className="inline-flex items-center space-x-2 bg-blue-500/10 text-blue-400 py-1.5 px-3.5 rounded-full text-xs font-semibold uppercase tracking-wider w-fit border border-blue-500/20">
@@ -136,7 +134,6 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </RevealOnScroll>
     </section>
   );
 };

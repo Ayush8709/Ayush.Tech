@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { RevealOnScroll } from "../RevealOnScroll";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -89,10 +88,9 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center py-24 w-full relative"
+      className="min-h-screen flex items-start md:items-center justify-center py-28 md:py-24 w-full relative"
     >
-      <RevealOnScroll>
-        <div className="max-w-6xl mx-auto px-6 w-full">
+      <div className="max-w-6xl mx-auto px-6 w-full">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
             
             {/* Left Column: Direct Connect & Details */}
@@ -253,7 +251,6 @@ export const Contact = () => {
 
           </div>
         </div>
-      </RevealOnScroll>
     </section>
   );
 };

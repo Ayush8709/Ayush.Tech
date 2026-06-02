@@ -1,4 +1,3 @@
-import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
   const skillCategories = [
@@ -63,10 +62,9 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center py-24 w-full relative overflow-hidden"
+      className="min-h-screen flex items-start md:items-center justify-center py-28 md:py-24 w-full relative overflow-hidden"
     >
-      <RevealOnScroll>
-        <div className="max-w-6xl mx-auto px-6 w-full">
+      <div className="max-w-6xl mx-auto px-6 w-full">
           {/* Section Heading */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-blue-500 via-indigo-400 to-cyan-400 bg-clip-text text-transparent inline-block">
@@ -200,7 +198,6 @@ export const About = () => {
 
           </div>
         </div>
-      </RevealOnScroll>
     </section>
   );
 };
