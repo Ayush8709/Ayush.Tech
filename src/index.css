@@ -1,50 +1,135 @@
 @import "tailwindcss";
 
+:root {
+  --bg-primary: #030712;
+  --bg-secondary: #090d16;
+  --bg-card: rgba(15, 23, 42, 0.4);
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --border-color: rgba(255, 255, 255, 0.06);
+  --accent: 59, 130, 246; /* blue-500 */
+  --accent-secondary: 6, 182, 212; /* cyan-500 */
+  --accent-glow: rgba(59, 130, 246, 0.15);
+  --timeline-line: rgba(59, 130, 246, 0.3);
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --glass-blur: 16px;
+  --input-bg: rgba(255, 255, 255, 0.03);
+}
+
+:root.light {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: rgba(15, 23, 42, 0.08);
+  --accent: 37, 99, 235; /* blue-600 */
+  --accent-secondary: 8, 145, 178; /* cyan-600 */
+  --accent-glow: rgba(37, 99, 235, 0.08);
+  --timeline-line: rgba(37, 99, 235, 0.2);
+  --card-shadow: rgba(15, 23, 42, 0.05);
+  --input-bg: rgba(15, 23, 42, 0.03);
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  background: #0a0a0a;
-  color: #f3f4f6;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  @keyframes blink {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-  }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--accent), 0.3);
+  border-radius: 9999px;
+  border: 2px solid var(--bg-primary);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--accent), 0.6);
+}
 
-  .animate-blink {
-    animation: blink 0.8s step-end infinite;
-  }
+/* Glassmorphism Styles */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px -10px var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
-  @keyframes loading {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(250%);
-    }
-  }
+.glass-panel:hover {
+  border-color: rgba(var(--accent), 0.2);
+  box-shadow: 0 20px 40px -15px rgba(var(--accent), 0.15);
+}
 
-  .animate-loading-bar {
-    animation: loading 0.8s ease infinite;
+/* Floating Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
   }
 }
 
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.15);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 10s ease-in-out infinite;
+}
+
+/* Reveal Animation */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Typewriter blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 0.8s step-end infinite;
+}
+
+/* Loading animations */
+@keyframes loading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}
+.animate-loading-bar {
+  animation: loading 1.2s ease-in-out infinite;
+}
+
