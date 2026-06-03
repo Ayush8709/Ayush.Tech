@@ -133,3 +133,27 @@ body {
   animation: loading 1.2s ease-in-out infinite;
 }
 
+/* Optimize spacing and height on portrait screens (including phones in desktop mode) */
+@media (orientation: portrait) {
+  #home,
+  #about,
+  #projects,
+  #contact {
+    min-height: auto !important;
+    min-height: fit-content !important;
+    align-items: flex-start !important;
+  }
+
+  #home {
+    padding-top: 9rem !important; /* Clear fixed navbar */
+    padding-bottom: 4rem !important;
+  }
+
+  #about,
+  #projects,
+  #contact {
+    padding-top: 7rem !important; /* Clear fixed navbar */
+    padding-bottom: 7rem !important;
+  }
+}
+
